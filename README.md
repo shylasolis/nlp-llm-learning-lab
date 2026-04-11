@@ -110,6 +110,60 @@ python bag_of_words_MSBA_265.py
 deactivate
 ```
 
+## First Class Exercise (5 Minutes)
+
+Use this mini activity to help students confirm everything is working.
+
+### Goal
+
+- Run one script end-to-end.
+- Recognize key output sections.
+- Explain in plain language what each section means.
+
+### Student steps
+
+1. Activate the virtual environment.
+2. Run:
+
+```bash
+python newsgroups_end_to_end_practice.py
+```
+
+### Expected output checkpoints
+
+Students should see these section headers in order:
+
+1. `20 NEWSGROUPS: DATA ORIGIN AND COLLECTION CONTEXT`
+2. `STEP 1: LOAD DATA`
+3. `PREPROCESSING GUIDE`
+4. `STEP 2: CLEAN TEXT`
+5. `ROUTE 1: TEXT CLASSIFICATION (BoW + Logistic Regression)`
+6. `ROUTE 2: DOCUMENT CLUSTERING (TF-IDF + KMeans)`
+7. `ROUTE 3: SEARCH AND RETRIEVAL (TF-IDF + COSINE SIMILARITY)`
+8. `ROUTE 4: BASELINE MODEL COMPARISON`
+9. `FINAL CROSS-ROUTE SUMMARY`
+
+If internet is unavailable, students may see a fallback message. That is expected, and the pipeline should still continue.
+
+### 3 quick interpretation questions
+
+1. Classification route: What does accuracy tell us?
+2. Clustering route: Why is silhouette not the same thing as accuracy?
+3. Retrieval route: What does Precision@5 mean in plain English?
+
+### One beginner tuning experiment
+
+In `newsgroups_end_to_end_practice.py`, change:
+
+- `min_token_length=2` to `min_token_length=3`
+
+Run again and compare summary metrics.
+
+Discuss:
+
+- Did performance improve or drop?
+- Why might removing short tokens help or hurt?
+
 ## New end-to-end practice pipeline
 Use the 20 Newsgroups practice script to learn full text-ML workflows:
 
@@ -132,3 +186,13 @@ If dataset download is unavailable, the script automatically switches to a local
 
 ## Architecture guide
 See NLP_ROUTE_ARCHITECTURE_GUIDE.md for route purpose, math architecture, tuning, and hard-coding intuition.
+
+## By-hand math walkthrough
+See WORKED_NLP_MATH_EXAMPLE.md for a tiny 3-sentence corpus where students can manually compute:
+
+- Cleaning outputs
+- Bag-of-Words matrix
+- TF-IDF values
+- Cosine retrieval ranking
+- One linear classifier score
+- One KMeans assignment/update iteration

@@ -126,3 +126,8 @@ Goal: Quickly identify strongest classical approach before deep learning.
 3. Tune model hyperparameters second.
 4. Keep an experiment log with settings and results.
 5. Validate improvements with at least one secondary metric (for example macro F1).
+
+## By-hand worked example
+For a full manual walkthrough on a tiny 3-sentence corpus, see WORKED_NLP_MATH_EXAMPLE.md.
+It includes step-by-step cleaning, BoW, TF-IDF, cosine retrieval, one classifier score,
+and one KMeans iteration students can reproduce without libraries.
