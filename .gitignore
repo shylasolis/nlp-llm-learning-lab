@@ -30,6 +30,7 @@ htmlcov/
 Thumbs.db
 
 # Local-only legacy files (not part of this repo project)
+local_archive/
 Step.docx
 learning_path.docx
 bag_of_words_MSBA_265.py
