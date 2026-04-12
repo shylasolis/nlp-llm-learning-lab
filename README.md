@@ -296,6 +296,10 @@ If dataset download is unavailable, the script automatically switches to a local
 ## Architecture guide
 See NLP_ROUTE_ARCHITECTURE_GUIDE.md for route purpose, math architecture, tuning, and hard-coding intuition.
 
+## Terminal interpretation guide
+See TERMINAL_OUTPUT_INTERPRETATION_GUIDE.md for a section-by-section explanation of
+terminal output, including purpose, math, interpretation, tuning, and what to compare.
+
 ## By-hand math walkthrough
 See WORKED_NLP_MATH_EXAMPLE.md for a tiny 3-sentence corpus where students can manually compute:
 
