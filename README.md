@@ -164,6 +164,80 @@ Discuss:
 - Did performance improve or drop?
 - Why might removing short tokens help or hurt?
 
+## Concept Explainer (What This Means)
+
+### What is 20 Newsgroups?
+
+20 Newsgroups is a classic text dataset built from old Usenet discussion posts.
+Each document belongs to one of 20 topic categories (for example sports, politics, computers, science, religion).
+
+Why this dataset is useful:
+
+- It is large enough to practice realistic NLP workflows.
+- It supports classification, clustering, retrieval, and baseline comparisons.
+- It contains natural text noise, which is good for preprocessing practice.
+
+### What are n-grams?
+
+An n-gram is a sequence of consecutive words:
+
+- Unigram (n=1): single words
+- Bigram (n=2): two-word phrases
+- Trigram (n=3): three-word phrases
+
+Example text: `i love python`
+
+- Unigrams: `i`, `love`, `python`
+- Bigrams: `i love`, `love python`
+
+Why this matters:
+
+- Unigrams are simpler and usually generalize well.
+- Bigrams/trigrams capture phrase meaning and context, but increase feature count.
+- More features can improve signal or increase overfitting risk.
+
+### Tuning spot explained
+
+In the classification route, we tune:
+
+- n-grams
+- vocabulary size (`max_features`)
+- `min_df`
+- regularization `C`
+
+These control feature richness vs. overfitting risk.
+
+1. n-grams:
+- Higher n can capture richer language patterns.
+- Higher n also increases dimensionality and sparsity.
+
+2. vocabulary size (`max_features`):
+- Larger vocabulary captures more detail.
+- Very large vocabulary can include noise and hurt generalization.
+
+3. `min_df`:
+- Drops tokens that appear in too few documents.
+- Helps remove rare/noisy terms (typos, one-off IDs, artifacts).
+
+4. regularization `C` (Logistic Regression):
+- Higher `C` = weaker regularization, more flexible fit, higher overfitting risk.
+- Lower `C` = stronger regularization, simpler decision boundary, possible underfitting.
+
+### Why this is called a tradeoff
+
+If features are too simple, the model underfits.
+If features are too rich with weak regularization, the model overfits.
+
+The tuning loop exists to find a balanced configuration that performs well on validation/test data, not just training data.
+
+### Small glossary for beginners
+
+- token: one cleaned word/term used as a feature
+- vocabulary: all tokens kept by the vectorizer
+- sparse vector: mostly zeros because each document uses only a small subset of vocabulary
+- overfitting: model memorizes training quirks and performs poorly on new data
+- underfitting: model is too simple to capture useful patterns
+
 ## New end-to-end practice pipeline
 Use the 20 Newsgroups practice script to learn full text-ML workflows:
 
