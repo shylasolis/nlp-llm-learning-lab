@@ -28,3 +28,14 @@ htmlcov/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local-only legacy files (not part of this repo project)
+Step.docx
+learning_path.docx
+bag_of_words_MSBA_265.py
+bag_of_words_compact.py
+bag_of_words_non_compact_1.py
+traditional_feature_creator_bag_of_words.py
+test_classifier_LSTM_1.py
+text_classifier_LSTM_1.py
+text_classifier_LSTM_pytorch.py
